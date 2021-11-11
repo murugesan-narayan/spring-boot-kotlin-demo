@@ -4,10 +4,10 @@ fun main() {
     var name = "Test"
     //name = null;      //error we can not assign null for non-null string
 
-    var optionalName: String? = "test"
+    var optionalName: String? = "test"      // ? says it can be nullable string
     optionalName = null;        //this is ok.
 
-    var age = 25
+    var age = 25                //Infers as non-null Int
     //age = null        //error we can not assign null for non-null number
 
     var optionalAge: Int? = 25

@@ -37,4 +37,19 @@ fun main() {
     if (k is String) println("String")
     k = null
     if (k !is String) println("NOT String")
+
+    println("----------------")
+
+    //Equality Checks
+    val authors = setOf("Shakespeare", "Hemingway", "Twain")
+    val writers = setOf("Twain", "Shakespeare", "Hemingway")
+
+    println(authors == writers)   // == calls equals method
+    println(authors === writers)  // === referential comparison
+
+    println("----------------")
+
+    fun max(a: Int, b: Int) = if (a > b) a else b  // if expression shortcut, no need for {}
+
+    println(max(99, -42))
 }

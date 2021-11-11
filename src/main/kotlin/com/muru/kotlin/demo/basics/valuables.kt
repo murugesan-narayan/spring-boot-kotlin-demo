@@ -1,13 +1,13 @@
 package com.muru.kotlin.demo.basics
 //valuables can not reassign to different values
 fun main() {
-    val name = "Ram"
+    val name = "Ram"        //immutable
     println(name)
     //name = "Ganesh"       //this gives error
 
     println(name.isEmpty())
 
-    val age = 32
+    val age = 32        //infers Int type
     println(age);
 
     //age = 32  //error
