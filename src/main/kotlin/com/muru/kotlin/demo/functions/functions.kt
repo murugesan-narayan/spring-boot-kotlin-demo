@@ -1,4 +1,4 @@
-package com.muru.kotlin.demo.basics
+package com.muru.kotlin.demo.functions
 
 fun hi(): Unit {
     println("Hi...")
