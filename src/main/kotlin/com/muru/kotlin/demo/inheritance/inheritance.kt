@@ -25,3 +25,19 @@ open class Person(var name: String, var age: Int) {
 class Manager(name: String, age: Int) : Person(name, age) {
     override fun getNameWithTitle() = "$title.$name, Team Manager"
 }
+
+// Implicitly inherits from Any
+// 'Any' has three methods: equals(), hashCode(), and toString()
+// By default, Kotlin classes are final – they can’t be inherited
+class Example
+
+//  To make a class inheritable, mark it with the open keyword
+open class Base // Class is open for inheritance
+
+//super class constructor can be called like below
+class MyView : Base() {
+    //constructor(ctx: Context) : super(ctx)
+
+    //constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
+}
+
