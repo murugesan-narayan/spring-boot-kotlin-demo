@@ -57,6 +57,9 @@ fun main() {
     println("name = ${user.component1()}")
     println("id = ${user.component2()}")
 
+    val (name, id) = user
+    println("$name id is $id") // prints name and id
+
 }
 
 //data classes automatically provided with methods for copying, getting a string representation,
@@ -66,7 +69,23 @@ data class Person(var firstName: String, var lastName: String)
 
 class PersonOne(var firstName: String, var lastName: String)
 
+// The primary constructor needs to have at least one parameter.
+// All primary constructor parameters need to be marked as val or var
+// Data classes cannot be abstract, open, sealed, or inner
 data class MyUser(val name: String, val id: Int) {           // 1
     override fun equals(other: Any?) =
         other is MyUser && other.id == this.id               // 2
+}
+
+// if the generated class needs to have a parameterless constructor,
+// default values for the properties have to be specified
+data class UserP(val name: String = "", val age: Int = 0)
+
+
+// The compiler only uses the properties defined inside the primary constructor
+// for the automatically generated functions.
+// To exclude a property from the generated implementations,
+// declare it inside the class body:
+data class PersonCD(val name: String) {
+    var age: Int = 0 //not considered for automatically generated functions
 }
