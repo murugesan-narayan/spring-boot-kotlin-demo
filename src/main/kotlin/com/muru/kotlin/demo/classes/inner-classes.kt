@@ -11,6 +11,7 @@ fun main() {
 class Outer {
     var outerName: String = "Outer Name"
     fun info() = println(outerName)
+    // A nested class marked as inner can access the members of its outer class
     inner class Inner {
         private var innerName: String = "Inner Name"
         fun info() = println("$outerName-$innerName")
@@ -23,4 +24,15 @@ class Outer {
 
 
     }
+}
+
+// You can also use interfaces with nesting. All combinations of classes and interfaces are possible
+interface OuterInterface {
+    class InnerClass
+    interface InnerInterface
+}
+
+class OuterClass {
+    class InnerClass
+    interface InnerInterface
 }

@@ -1,10 +1,15 @@
 package com.muru.kotlin.demo.classes
 
 fun main() {
+
     println(AccType.PLATINUM)
+    // Every enum constant has properties for obtaining its name and position in the enum class declaration:
+    println(AccType.PLATINUM.name)
+    println(AccType.PLATINUM.ordinal)
     println(AccType.PLATINUM.discountPercent)
     //println(AccType.valueOf("gold")) //error
     println(AccType.valueOf("GOLD")) //ok
+    println(AccType.values())   // returns Array of enum values
     println(AccType2.PLATINUM.calcDiscount())
     println(AccType2.getAccTypeByName("silver"))    //ok because gets through static method
 
