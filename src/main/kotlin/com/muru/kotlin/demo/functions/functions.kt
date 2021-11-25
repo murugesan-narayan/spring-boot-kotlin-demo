@@ -50,7 +50,12 @@ fun nested() {
     fun how(): String {
         return "How are you?"
     }
-    println("${n_hi()} ${there()} ${how()}")
+    var i = "What's up?"
+    //A local function can access local variables of outer functions
+    fun all() {
+        println("${n_hi()} ${there()} ${how()} $i")
+    }
+    all()
 }
 
 fun isGreater(a: Int, b: Int): Boolean = a > b;
