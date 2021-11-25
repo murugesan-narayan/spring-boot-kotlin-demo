@@ -10,4 +10,11 @@ fun main() {
     println(str[0..14])
 }
 
-
+interface IndexedContainer {
+    operator fun get(index: Int)
+}
+// To overload an operator, mark the corresponding function with the operator modifier
+class OrdersList: IndexedContainer {
+    //When overriding your operator overloads, you can omit operator
+    override fun get(index: Int) { /*...*/ }
+}
